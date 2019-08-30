@@ -1,0 +1,25 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+@import url(../blocks/root/root.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/menu/menu.css);
+@import url(../blocks/link/link.css);
+@import url(../blocks/search-section/search-section.css);
+@import url(../blocks/news-card/news-card.css);
+@import url(../blocks/results-section/results-section.css);
+@import url(../blocks/about-sections/about-sections.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/commit-card/commit-card.css);
+@import url(../blocks/table-block/table-block.css);
+@import url(../blocks/text-block/text-block.css);
+@import url(../blocks/card-section/card-section.css);
+@import url(../blocks/graph-container/graph-container.css);
+@import url(../blocks/circle-preloader/circle-preloader.css);
+@import url(../blocks/analytics-section/analytics-section.css);
+@import url(../blocks/technology-block/technology-block.css);
+
+/** {*/
+/*    border: red 1px solid;*/
+/*    box-sizing: border-box;*/
+/*}*/
