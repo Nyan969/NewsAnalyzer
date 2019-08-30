@@ -1,0 +1,17 @@
+.header__menu-item_current-item-with-background {
+    color: #fff !important;
+    border-bottom: #fff 2px solid;
+    padding-bottom: 26px;
+}
+
+@media screen and (max-width: 768px) {
+    .header__menu-item_current-item-with-background {
+        padding-bottom: 18px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .header__menu-item_current-item-with-background {
+        padding-bottom: 15px;
+    }
+}

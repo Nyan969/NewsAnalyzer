@@ -1,0 +1,8 @@
+@import url(_current-item/header__menu-item_current-item.css);
+@import url(_current-item-whth-background/header__menu-item_current-item-with-background.css);
+@import url(_hover-item-with-background/header__menu-item_hover-item-with-background.css);
+@import url(_hover-item/header__menu-item_hover-item.css);
+
+.header__menu-item {
+    color: #B6BCBF;
+}

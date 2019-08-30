@@ -1,0 +1,15 @@
+:root {
+    --btn-bg-color: #2F71E5;
+}
+
+.search-section__input:focus + .search-section__button {
+    --btn-bg-color: #347EFF;
+}
+
+.search-section__button:focus {
+    --btn-bg-color: #2A65CC;
+}
+.search-section__button {
+    background: var(--btn-bg-color);
+    color: #fff;
+}

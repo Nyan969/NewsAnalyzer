@@ -1,0 +1,11 @@
+@import url(__title/card-section__title.css);
+@import url(__description/card-section__description.css);
+@import url(__title-block/card-section__title-block.css);
+@import url(__button/card-section__button.css);
+@import url(__news-grid/card-section__news-grid.css);
+@import url(__image/card-section__image.css);
+
+.card-section {
+    background: #F5F6F7;
+    align-items: center;
+}

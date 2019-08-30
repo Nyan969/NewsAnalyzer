@@ -1,0 +1,9 @@
+@import url(__caption-content/graph-container__caption-content.css);
+@import url(__chart/graph-container__chart.css);
+@import url(__description/graph-container__description.css);
+@import url(__block/graph-container__block.css);
+
+.graph-container {
+    width: 100%;
+    margin: 0;
+}

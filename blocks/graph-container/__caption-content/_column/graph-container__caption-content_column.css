@@ -1,0 +1,4 @@
+.graph-container__caption-content_column {
+    display: flex;
+    flex-direction: column;
+}

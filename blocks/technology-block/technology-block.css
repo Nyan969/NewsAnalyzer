@@ -1,0 +1,12 @@
+@import url(__title/technology-block__title.css);
+
+@media screen and (max-width: 768px) {
+    .search-section {
+
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .search-section {
+    }
+}
