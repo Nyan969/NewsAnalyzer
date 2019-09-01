@@ -1,0 +1,16 @@
+.technology-section__title {
+    font-family: 'Roboto Slab';
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 46px;
+    margin: 0 ;
+    max-width: 334px;
+}
+
+@media screen and (max-width: 768px) {
+    .technology-section__title {
+        font-size: 30px;
+        line-height: 34px;
+        padding-bottom: 40px;
+    }
+}

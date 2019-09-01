@@ -1,0 +1,10 @@
+.commit-card__info {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #B6BCBF;
+}
+
+.commit-card__info_mail {
+    color: #000;
+}

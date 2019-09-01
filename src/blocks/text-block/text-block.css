@@ -1,0 +1,18 @@
+@import url(__description/text-block__description.css);
+@import url(__title/text-block__title.css);
+
+.text-block {
+    align-self: flex-start;
+    max-width: 815px;
+}
+
+.about-sections .text-block {
+    max-width: 600px;
+    padding-top: 53px;
+}
+
+@media screen and (max-width: 768px) {
+    .about-sections .text-block {
+        padding-top: 0;
+    }
+}

@@ -1,0 +1,24 @@
+@media screen and (max-width: 320px) {
+    .card-section__button_commit {
+        position: absolute;
+        bottom: 32px;
+        line-height: 56px;
+        max-width: 288px;
+        height: 56px;
+        text-align: center;
+
+        border: 1px solid #1A1B22;
+        border-radius: 80px;
+        width: 100%;
+    }
+}
+
+/*.glide__arrow:hover {*/
+/*    box-shadow: 0 3px 10px rgba(14, 26, 57, 0.2);*/
+/*    transform: matrix(-1, 0, 0, 1, 0, 0);*/
+/*}*/
+/*@media screen and (max-width: 768px) {*/
+/*    .glide__arrows {*/
+/*        display: none;*/
+/*    }*/
+/*}*/

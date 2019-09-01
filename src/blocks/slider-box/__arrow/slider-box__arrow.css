@@ -1,0 +1,12 @@
+.slider-box__arrow {
+    padding: 0 !important;
+    border-radius: 100px !important;
+    box-shadow: none !important;
+}
+
+@media screen and (max-width: 768px) {
+
+    .slider-box__arrow {
+        display: none !important;
+    }
+}

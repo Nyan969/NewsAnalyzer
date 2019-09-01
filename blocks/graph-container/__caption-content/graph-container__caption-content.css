@@ -1,9 +1,0 @@
-@import url(_column/graph-container__caption-content_column.css);
-@import url(_scale/graph-container__caption-content_scale.css);
-
-.graph-container__caption-content {
-    display: flex;
-    align-items: flex-start;
-    border-bottom: 1px solid #000;
-    padding-bottom: 24px;
-}

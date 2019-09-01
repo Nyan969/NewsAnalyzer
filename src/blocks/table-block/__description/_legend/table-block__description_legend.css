@@ -1,0 +1,26 @@
+.table-block__description_legend {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #B6BCBF;
+    text-transform: uppercase;
+}
+
+.table-block__description_date {
+    width: 104px;
+}
+
+.bar {
+    padding-bottom: 56px;
+}
+
+@media screen and (max-width: 320px) {
+    .table-block__description_date {
+        width: 64px;
+    }
+    .bar {
+        padding-bottom: 24px;
+    }
+
+}
+

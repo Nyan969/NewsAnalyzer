@@ -1,0 +1,13 @@
+.graph-container__chart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.graph-container__chart svg {
+    padding: 28px 0;
+}
+@media screen and (max-width: 320px) {
+    .graph-container__chart svg {
+        padding: 12px 0;
+    }
+}

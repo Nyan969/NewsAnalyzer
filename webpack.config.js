@@ -5,8 +5,8 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     entry: {
         main: './src/index.js',
-        about: './src/index.js',
-        analytics: './src/index.js'
+        about: './src/pages/about/about.js',
+        analytics: './src/pages/analytics/analytics.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -30,7 +30,7 @@ module.exports = {
                 loader: 'file-loader?name=./vendor/fonts/[name].[ext]'
             },
             {
-                test: /\.(png|jpg|gif|ico|svg)$/,
+                test: /\.(png|jpg|gif|ico|svg|jpeg)$/,
                 use: [
                     'file-loader?name=./images/[name].[ext]',
                     {
@@ -47,12 +47,6 @@ module.exports = {
                     }
                 ]
             }
-            // ,
-            // {
-            //     test: /\.html$/,
-            // // loader:'file-loader?name=./page/[name].[ext]'
-            //      loader: 'html-loader'
-            // }
         ]
     },
     plugins: [
@@ -69,15 +63,15 @@ module.exports = {
             inject: false,
             chunks: ['about'],
             hash: true,
-            template: './pages/about.html',
-            filename: 'about.html'
+            template: './src/pages/about/about.html',
+            filename: 'about/about.html'
         }),
         new HtmlWebpackPlugin({
             inject: false,
             chunks: ['analytics'],
             hash: true,
-            template: './pages/analytics.html',
-            filename: 'analytics.html'
+            template: './src/pages/analytics/analytics.html',
+            filename: 'analytics/analytics.html'
         }),
         new WebpackMd5Hash()
     ]

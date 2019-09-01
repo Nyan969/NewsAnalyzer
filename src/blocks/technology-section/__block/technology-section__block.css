@@ -1,0 +1,22 @@
+.technology-section__block {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    width: 100%;
+    justify-items: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+    .technology-section__block {
+        justify-items: center;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .technology-section__block {
+        justify-items: center;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        row-gap: 41px;
+    }
+}
+
+

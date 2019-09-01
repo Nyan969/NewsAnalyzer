@@ -1,0 +1,26 @@
+@import url(__arrow/slider-box__arrow.css);
+@import url(__bullets/slider-box__bullets.css);
+@import url(__bullet/slider-box__bullet.css);
+
+.slider-box {
+    position: relative;
+    width: calc((100% + (100% + 400px))/2);
+}
+
+/*.card-section__slider-box:after {*/
+/*    content: "";*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*}*/
+
+@media screen and (max-width: 768px) {
+    .slider-box {
+        width: calc((100% + (100% + 120px))/2);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .slider-box {
+        width: calc((100% + (100% + 64px))/2);
+    }
+}

@@ -1,0 +1,25 @@
+.footer__menu-item {
+    color: #000;
+    font-family: 'Source Sans Pro';
+    font-weight: normal;
+    transition: opacity 0.2s ease 0.5s;
+
+}
+
+.footer__menu-item:hover {
+    opacity: 0.4;
+}
+
+@media screen and (max-width: 768px) {
+    .footer__menu-item {
+        margin-left: 25px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .footer__menu-item {
+        margin: 0;
+        font-size: 18px;
+        line-height: 48px;
+    }
+}

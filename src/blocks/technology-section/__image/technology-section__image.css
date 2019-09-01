@@ -1,0 +1,9 @@
+.technology-section__image {
+    max-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 135px;
+    margin: 0;
+}

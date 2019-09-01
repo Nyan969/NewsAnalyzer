@@ -1,9 +1,0 @@
-@import url(_date/table-block__description_date.css);
-
-.table-block__description {
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 16px;
-    color: #B6BCBF;
-    text-transform: uppercase;
-}
