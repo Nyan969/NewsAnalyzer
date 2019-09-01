@@ -9,9 +9,7 @@
     <meta name="application-name" content="about project">
     <title>News Analyzer</title>
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">
-    <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-    <link rel="stylesheet" href="../node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
-    <link rel="icon" href="/src/images/favicon.png" type="image/png">
+    <link rel="icon" href="../images/favicon.png" type="image/png">
 </head>
 <body>
 <div class="root">
@@ -19,8 +17,8 @@
         <span class="header__logo">NewsAnalyzer</span>
         <nav>
             <ul class="menu">
-                <li><a class="link menu__item header__menu-item header__menu-item_hover-item" href="/NewsAnalyzer">Главная</a></li>
-                <li><a class="link menu__item header__menu-item header__menu-item_current-item" href="about.html">О
+                <li><a class="link menu__item header__menu-item header__menu-item_hover-item" href="../">Главная</a></li>
+                <li><a class="link menu__item header__menu-item header__menu-item_current-item" href="#">О
                     проекте</a></li>
             </ul>
         </nav>
@@ -108,7 +106,7 @@
         </div>
     </section>
     <section class="about-sections root__section">
-        <img class="about-sections__image" src="<%=require('../images/news.jpg')%>">
+        <img class="about-sections__image" src="../<%= require('../images/news.jpg')%>">
         <div class="text-block">
             <h2 class="text-block__title">Об авторе</h2>
             <p class="text-block__description">
@@ -142,7 +140,7 @@
                         <article class="commit-card">
                             <span class="commit-card__info">2 августа, 2019</span>
                             <div class="commit-card__user-info-container">
-                                <img class="commit-card__image" src="<%=require('../images/news.jpg')%>">
+                                <img class="commit-card__image" src="../<%= require('../images/news.jpg')%>">
                                 <div>
                                     <h3 class="commit-card__title">Антон Долинин1</h3>
                                     <span class="commit-card__info commit-card__info_mail">anton@yandex.ru</span>
@@ -159,7 +157,7 @@
                         <article class="commit-card">
                             <span class="commit-card__info">2 августа, 2019</span>
                             <div class="commit-card__user-info-container">
-                                <img class="commit-card__image" src="<%=require('../images/news.jpg')%>">
+                                <img class="commit-card__image" src="../<%= require('../images/news.jpg')%>">
                                 <div>
                                     <h3 class="commit-card__title">Антон Долинин2</h3>
                                     <span class="commit-card__info">anton@yandex.ru</span>
@@ -176,7 +174,7 @@
                         <article class="commit-card">
                             <span class="commit-card__info">2 августа, 2019</span>
                             <div class="commit-card__user-info-container">
-                                <img class="commit-card__image" src="<%=require('../images/news.jpg')%>">
+                                <img class="commit-card__image" src="../<%= require('../images/news.jpg')%>">
                                 <div>
                                     <h3 class="commit-card__title">Антон Долинин3</h3>
                                     <span class="commit-card__info">anton@yandex.ru</span>
@@ -193,7 +191,7 @@
                         <article class="commit-card">
                             <span class="commit-card__info">2 августа, 2019</span>
                             <div class="commit-card__user-info-container">
-                                <img class="commit-card__image" src="<%=require('../images/news.jpg')%>">
+                                <img class="commit-card__image" src="../<%= require('../images/news.jpg')%>">
                                 <div>
                                     <h3 class="commit-card__title">Антон Долинин4</h3>
                                     <span class="commit-card__info commit-card__info_mail">anton@yandex.ru</span>
@@ -210,7 +208,7 @@
                         <article class="commit-card">
                             <span class="commit-card__info">2 августа, 2019</span>
                             <div class="commit-card__user-info-container">
-                                <img class="commit-card__image" src="<%=require('../images/news.jpg')%>">
+                                <img class="commit-card__image" src="../<%= require('../images/news.jpg')%>">
                                 <div>
                                     <h3 class="commit-card__title">Антон Долинин5</h3>
                                     <span class="commit-card__info commit-card__info_mail">anton@yandex.ru</span>
@@ -289,8 +287,8 @@
         <span class="footer__copyright">&copy; 2019  Supersite</span>
         <nav>
             <ul class="menu footer__menu">
-                <li><a class="link menu__item footer__menu-item" href="/NewsAnalyzer">Главная</a></li>
-                <li><a class="link menu__item footer__menu-item" href="about.html">О проекте</a></li>
+                <li><a class="link menu__item footer__menu-item" href="../">Главная</a></li>
+                <li><a class="link menu__item footer__menu-item" href="#">О проекте</a></li>
                 <li><a class="link menu__item footer__menu-item" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a></li>
             </ul>
         </nav>

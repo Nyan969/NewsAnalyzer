@@ -5,12 +5,14 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
     entry: {
         main: './src/index.js',
-        about: './src/pages/about/about.js',
-        analytics: './src/pages/analytics/analytics.js'
+        about: './src/about/about.js',
+        analytics: './src/analytics/analytics.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[chunkhash].js'
+        filename: (chunkData) => {
+            return chunkData.chunk.name === 'main' ? '[name].[hash].js': '[name]/[name].[hash].js';
+        }
     },
     module: {
         rules: [
@@ -30,12 +32,13 @@ module.exports = {
                 loader: 'file-loader?name=./vendor/fonts/[name].[ext]'
             },
             {
-                test: /\.(png|jpg|gif|ico|svg|jpeg)$/,
+                test: /\.(png|jpe?g|gif|ico|svg)$/,
                 use: [
                     'file-loader?name=./images/[name].[ext]',
                     {
                         loader: 'image-webpack-loader',
-                        options: { mozjpeg: {
+                        options: {
+                            mozjpeg: {
                                 progressive: true,
                                 quality: 65
                             },
@@ -54,23 +57,15 @@ module.exports = {
             filename: 'style.[contenthash].css',
         }),
         new HtmlWebpackPlugin({
-            inject: false,
-            hash: true,
             template: './src/index.html',
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
-            inject: false,
-            chunks: ['about'],
-            hash: true,
-            template: './src/pages/about/about.html',
+            template: './src/about/about.html',
             filename: 'about/about.html'
         }),
         new HtmlWebpackPlugin({
-            inject: false,
-            chunks: ['analytics'],
-            hash: true,
-            template: './src/pages/analytics/analytics.html',
+            template: './src/analytics/analytics.html',
             filename: 'analytics/analytics.html'
         }),
         new WebpackMd5Hash()
