@@ -57,14 +57,17 @@ module.exports = {
             filename: 'style.[contenthash].css',
         }),
         new HtmlWebpackPlugin({
+            inject: false,
             template: './src/index.html',
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
+            inject: false,
             template: './src/about/about.html',
             filename: 'about/about.html'
         }),
         new HtmlWebpackPlugin({
+            inject: false,
             template: './src/analytics/analytics.html',
             filename: 'analytics/analytics.html'
         }),
