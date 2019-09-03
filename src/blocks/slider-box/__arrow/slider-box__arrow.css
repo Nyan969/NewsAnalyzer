@@ -1,11 +1,11 @@
 .slider-box__arrow {
-    padding: 0 !important;
     border-radius: 100px !important;
     box-shadow: none !important;
+    border: none !important;
 }
 
 .slider-box__arrow:hover {
-    transform: scale(1.5, 1.5) translateY(-33%);
+    transform: scale(1.2, 1.2) translateY(-42%);
 }
 
 @media screen and (max-width: 768px) {
