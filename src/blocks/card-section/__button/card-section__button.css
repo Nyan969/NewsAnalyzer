@@ -6,6 +6,10 @@
     margin-top: 82px;
 }
 
+.card-section__button:hover {
+    background: #f9fafb;
+}
+
 .card-section__button:active {
     background: #F5F6F7;
 }

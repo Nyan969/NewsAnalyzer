@@ -4,7 +4,7 @@ import "../../node_modules/@glidejs/glide/dist/css/glide.theme.min.css";
 
 import Glide from '@glidejs/glide';
 
-new Glide('.glide', {
+const glide = new Glide('.glide', {
     focusAt: "center",
     startAt: 3,
     perView: 4,
@@ -34,4 +34,5 @@ new Glide('.glide', {
             peek: 88
         }
     }
-}).mount();
+});
+glide.mount();

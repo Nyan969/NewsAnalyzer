@@ -1,4 +1,4 @@
-.graph__container__description {
+.graph-container__description {
     font-weight: normal;
     font-size: 18px;
     line-height: 80px;
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .graph__container__description {
+    .graph-container__description {
         line-height: 48px;
         width: 64px;
     }

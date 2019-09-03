@@ -6,9 +6,13 @@
     --btn-bg-color: #347EFF;
 }
 
-.search-section__button:focus {
-    --btn-bg-color: #2A65CC;
+.search-section__button:active {
+    --btn-bg-color: #2954a8;
 }
+.search-section__button:hover {
+    --btn-bg-color: #347EFF;
+}
+
 .search-section__button {
     background: var(--btn-bg-color);
     color: #fff;

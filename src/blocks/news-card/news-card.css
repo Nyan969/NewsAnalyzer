@@ -14,11 +14,10 @@
     background-color: #fff;
     overflow: hidden;
     height: 576px;
-    transition: opacity 0.25s ease 0.26s;
 }
 
 .news-card:hover {
-    opacity: 0.5;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
