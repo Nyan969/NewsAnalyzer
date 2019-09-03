@@ -13,7 +13,7 @@ new Glide('.glide', {
     breakpoints: {
         320: {
             gap: 8,
-            peek: 0,
+            peek: 16,
             perView: 1
         },
         540: {

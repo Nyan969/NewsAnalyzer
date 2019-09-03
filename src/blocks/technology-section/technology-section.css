@@ -5,9 +5,10 @@
 .technology-section {
     background: #F5F6F7;
     flex-direction: row;
+    justify-content: flex-start;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .technology-section {
         flex-direction: column;
     }

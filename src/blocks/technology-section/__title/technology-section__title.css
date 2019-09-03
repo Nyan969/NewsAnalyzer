@@ -4,11 +4,12 @@
     font-size: 40px;
     line-height: 46px;
     margin: 0 ;
-    max-width: 334px;
+    max-width: 526px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .technology-section__title {
+        max-width: 336px;
         font-size: 30px;
         line-height: 34px;
         padding-bottom: 40px;
