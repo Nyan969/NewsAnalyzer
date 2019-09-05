@@ -81,7 +81,6 @@ module.exports = {
         new OptimizeCssAssetsPlugin({
             assetNameRegExp: /.css$/,
             cssProcessor: require('cssnano'),
-            cssProcessorPr: require('autoprefixer'),
             cssProcessorPluginOptions: {
                 preset: ['default', {discardComments: {removeAll: true}}],
             },
