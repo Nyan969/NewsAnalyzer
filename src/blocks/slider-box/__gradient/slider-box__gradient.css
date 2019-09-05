@@ -1,8 +1,8 @@
 .slider-box__gradient {
-    -webkit-mask-image: linear-gradient(to left , rgba(0,0,0,1) calc( 100% - 150px), rgba(0,0,0,0) ),linear-gradient(to right, rgba(0,0,0,1) calc( 100% - 200px), rgba(0,0,0,0)) !important;
-    -webkit-mask-size: 51% 100% !important;
-    -webkit-mask-repeat: no-repeat !important;
-    -webkit-mask-position: center left, center right !important;
+    -webkit-mask-image: linear-gradient(to left , rgba(0,0,0,1) calc( 100% - 200px), rgba(0,0,0,0) ),linear-gradient(to right, rgba(0,0,0,1) calc( 100% - 200px), rgba(0,0,0,0)) ;
+    -webkit-mask-size: 51% 100% ;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center left, center right ;
 }
 
 @media screen and (max-width: 768px) {

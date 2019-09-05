@@ -11,7 +11,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: (chunkData) => {
-            return chunkData.chunk.name === 'main' ? '[name].[hash].js': '[name]/[name].[hash].js';
+            return chunkData.chunk.name === 'main' ? '[name].[hash].js' : '[name]/[name].[hash].js';
         }
     },
     module: {
@@ -24,36 +24,51 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
-                use:  [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
+                test: /\.css$/i,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader',
+
+                    }
+                ]
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
-                loader: 'file-loader?name=./vendor/fonts/[name].[ext]'
-            },
+                loader:
+                    'file-loader?name=./vendor/fonts/[name].[ext]'
+            }
+            ,
             {
                 test: /\.(png|jpe?g|gif|ico|svg)$/,
-                use: [
-                    'file-loader?name=./images/[name].[ext]',
-                    {
-                        loader: 'image-webpack-loader',
-                        options: {
-                            mozjpeg: {
-                                progressive: true,
-                                quality: 65
-                            },
-                            pngquant: {
-                                quality: '65-90',
-                                speed: 4
+                use:
+                    [
+                        'file-loader?name=./images/[name].[ext]',
+                        {
+                            loader: 'image-webpack-loader',
+                            options: {
+                                mozjpeg: {
+                                    progressive: true,
+                                    quality: 65
+                                },
+                                pngquant: {
+                                    quality: '65-90',
+                                    speed: 4
+                                }
                             }
                         }
-                    }
-                ]
+                    ]
             }
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({ //
+        new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
         }),
         new HtmlWebpackPlugin({
@@ -73,4 +88,5 @@ module.exports = {
         }),
         new WebpackMd5Hash()
     ]
-};
+}
+;

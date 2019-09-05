@@ -2,6 +2,8 @@
 @import url(__menu-item/footer__menu-item.css);
 @import url(__social-link/footer__social-link.css);
 @import url(__menu/footer__menu.css);
+@import url(__social-menu/footer__social-menu.css);
+
 
 .footer {
     height: 80px;

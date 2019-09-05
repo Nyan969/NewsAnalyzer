@@ -10,15 +10,12 @@
         border: 1px solid #1A1B22;
         border-radius: 80px;
         width: 100%;
+        transition: background 0.2s ease 0s;
+    }
+    .card-section__button_commit:hover {
+        background: #f9fafb;
+    }
+    .card-section__button_commit:active {
+        background: #fff;
     }
 }
-
-/*.glide__arrow:hover {*/
-/*    box-shadow: 0 3px 10px rgba(14, 26, 57, 0.2);*/
-/*    transform: matrix(-1, 0, 0, 1, 0, 0);*/
-/*}*/
-/*@media screen and (max-width: 768px) {*/
-/*    .glide__arrows {*/
-/*        display: none;*/
-/*    }*/
-/*}*/
