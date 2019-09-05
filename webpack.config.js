@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
     entry: {
         main: './src/index.js',
@@ -24,9 +25,11 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/i,
+                test: /\.css$/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
                     {
                         loader: 'css-loader',
                         options: {
@@ -35,8 +38,12 @@ module.exports = {
                     },
                     {
                         loader: 'postcss-loader',
-
-                    }
+                        options: {
+                            plugins: () => [require('autoprefixer')({
+                                'browsers': ['> 1%', 'last 2 versions']
+                            })],
+                        }
+                    },
                 ]
             },
             {
@@ -70,6 +77,15 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'style.[contenthash].css',
+        }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /.css$/,
+            cssProcessor: require('cssnano'),
+            cssProcessorPr: require('autoprefixer'),
+            cssProcessorPluginOptions: {
+                preset: ['default', {discardComments: {removeAll: true}}],
+            },
+            canPrint: true
         }),
         new HtmlWebpackPlugin({
             inject: false,
