@@ -1,0 +1,22 @@
+.search-section__input {
+    font-size: 16px;
+    line-height: 22px;
+    width: calc(100% - 160px);
+    height: 64px;
+    border-radius: 100px;
+    border: none;
+    padding: 0 24px;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto';
+}
+
+@media screen and (max-width: 446px) {
+    .search-section__input {
+        max-width: 288px;
+        height: 56px;
+        margin: 0 0 16px;
+        padding: 0 16px;
+        width: 100%;
+    }
+}

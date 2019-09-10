@@ -1,0 +1,10 @@
+.commit-card__user-info-container {
+    display: flex;
+    margin: 16px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .commit-card__user-info-container {
+        margin: 18px 0;
+    }
+}

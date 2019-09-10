@@ -1,0 +1,16 @@
+.slider-box__arrow {
+    border-radius: 100px !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.slider-box__arrow:hover {
+    transform: scale(1.2, 1.2) translateY(-42%);
+}
+
+@media screen and (max-width: 768px) {
+
+    .slider-box__arrow {
+        display: none !important;
+    }
+}

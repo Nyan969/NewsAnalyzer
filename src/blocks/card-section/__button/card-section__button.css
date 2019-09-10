@@ -1,0 +1,28 @@
+@import url(_commit/card-section__button_commit.css);
+
+.card-section__button {
+    background: #fff;
+    color: #000;
+    margin-top: 82px;
+}
+
+.card-section__button:hover {
+    background: #f9fafb;
+}
+
+.card-section__button:active {
+    background: #F5F6F7;
+}
+
+@media screen and (max-width: 768px) {
+    .card-section__button {
+        margin-top: 32px;
+        width: 240px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .card-section__button {
+        margin-top: 13px;
+    }
+}

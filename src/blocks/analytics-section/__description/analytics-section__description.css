@@ -1,0 +1,16 @@
+.analytics-section__description {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: normal;
+    margin: 0 0 4px;
+}
+
+.analytics-section__description_gray {
+    color: #B6BCBF;
+}
+
+@media screen and (max-width: 768px) {
+    .analytics-section__description {
+        display: none;
+    }
+}

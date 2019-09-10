@@ -1,0 +1,16 @@
+.technology-section__block {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(120px, 1fr));
+    column-gap: 39px;
+    justify-items: center;
+}
+
+@media screen and (max-width: 626px) {
+    .technology-section__block {
+        justify-items: center;
+        grid-template-columns: repeat(2, minmax(120px, 1fr));
+        row-gap: 41px;
+    }
+}
+
+

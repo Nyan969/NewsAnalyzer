@@ -1,0 +1,24 @@
+.search-section__input-container {
+    max-width: 608px;
+    display: flex;
+    border-radius: 100px;
+    background-color: #fff;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .search-section__input-container {
+        max-width: 448px;
+    }
+}
+
+
+@media screen and (max-width: 446px) {
+    .search-section__input-container {
+        max-width: 288px;
+        display: flex;
+        flex-direction: column;
+        background-color: unset;
+        width: 100%;
+    }
+}

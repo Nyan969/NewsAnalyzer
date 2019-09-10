@@ -1,0 +1,35 @@
+@import url(__text-content/news-card__text-content.css);
+@import url(__image/news-card__image.css);
+@import url(__date/news-card__date.css);
+@import url(__text/news-card__text.css);
+@import url(__source/news-card__source.css);
+@import url(__title/news-card__title.css);
+
+.news-card {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 400px;
+    border-radius: 16px;
+    background-color: #fff;
+    overflow: hidden;
+    height: 576px;
+}
+
+.news-card:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .news-card {
+        height: 420px;
+        max-width: 224px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .news-card {
+        height: 446px;
+        max-width: 288px;
+    }
+}

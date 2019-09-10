@@ -1,0 +1,6 @@
+@import url(__title/table-block__title.css);
+@import url(__description/table-block__description.css);
+
+.table-block {
+    background: #F5F6F7;
+}

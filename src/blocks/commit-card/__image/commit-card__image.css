@@ -1,0 +1,19 @@
+.commit-card__image {
+    border-radius: 1000px;
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    background-size: cover;
+    background-position: center;
+    margin-right: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .commit-card__image {
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        margin-right: 12px;
+    }
+
+}

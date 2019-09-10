@@ -1,0 +1,15 @@
+@import url(__title/technology-section__title.css);
+@import url(__block/technology-section__block.css);
+@import url(__image/technology-section__image.css);
+
+.technology-section {
+    background: #F5F6F7;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 1000px) {
+    .technology-section {
+        flex-direction: column;
+    }
+}

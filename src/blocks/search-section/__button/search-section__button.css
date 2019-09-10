@@ -1,0 +1,19 @@
+:root {
+    --btn-bg-color: #2F71E5;
+}
+
+.search-section__input:focus + .search-section__button {
+    --btn-bg-color: #347EFF;
+}
+
+.search-section__button:active {
+    --btn-bg-color: #2954a8;
+}
+.search-section__button:hover {
+    --btn-bg-color: #347EFF;
+}
+
+.search-section__button {
+    background: var(--btn-bg-color);
+    color: #fff;
+}

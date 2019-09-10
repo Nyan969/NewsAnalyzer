@@ -1,0 +1,12 @@
+@import url(__description/analytics-section__description.css);
+
+.analytics-section {
+    padding-top: 40px
+}
+
+@media screen and (max-width: 320px) {
+    .analytics-section {
+        padding-top: 40px
+    }
+}
+

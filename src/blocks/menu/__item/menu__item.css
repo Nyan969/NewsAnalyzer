@@ -1,0 +1,12 @@
+.menu__item {
+    font-size: 18px;
+    line-height: 24px;
+    margin-left: 36px;
+}
+
+@media screen and (max-width: 320px) {
+    .menu__item {
+        font-size: 16px;
+        margin-left: 11px;
+    }
+}

@@ -1,0 +1,8 @@
+@media screen and (max-width: 320px) {
+
+    .card-section_commit {
+        position: relative;
+        height: 568px;
+        justify-content: flex-start;
+    }
+}

@@ -1,0 +1,21 @@
+@media screen and (max-width: 320px) {
+    .card-section__button_commit {
+        position: absolute;
+        bottom: 32px;
+        line-height: 56px;
+        max-width: 288px;
+        height: 56px;
+        text-align: center;
+
+        border: 1px solid #1A1B22;
+        border-radius: 80px;
+        width: 100%;
+        transition: background 0.2s ease 0s;
+    }
+    .card-section__button_commit:hover {
+        background: #f9fafb;
+    }
+    .card-section__button_commit:active {
+        background: #fff;
+    }
+}

@@ -1,0 +1,12 @@
+.news-card__text {
+    font-size: 16px;
+    line-height: 22px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 320px) {
+    .news-card__text {
+        margin: 0 0 5px;
+    }
+}

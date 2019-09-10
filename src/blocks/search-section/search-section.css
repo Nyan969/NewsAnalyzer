@@ -1,0 +1,11 @@
+@import url(__background/search-section__background.css);
+@import url(__title/search-section__title.css);
+@import url(__subtitle/search-section__subtitle.css);
+@import url(__input/search-section__input.css);
+@import url(__input-container/search-section__input-container.css);
+@import url(__button/search-section__button.css);
+
+.search-section {
+    align-items: center !important;
+    color: #fff;
+}

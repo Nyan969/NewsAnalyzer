@@ -1,0 +1,20 @@
+@import url(__arrow/slider-box__arrow.css);
+@import url(__bullets/slider-box__bullets.css);
+@import url(__bullet/slider-box__bullet.css);
+@import url(__gradient/slider-box__gradient.css);
+
+.slider-box {
+    width: calc((100% + (100% + 400px))/2);
+}
+
+@media screen and (max-width: 768px) {
+    .slider-box {
+        width: calc((100% + (100% + 155px))/2);
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .slider-box {
+        width: calc((100% + (100% + 64px))/2);
+    }
+}

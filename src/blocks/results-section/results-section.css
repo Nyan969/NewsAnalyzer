@@ -1,0 +1,7 @@
+@import url(__description/results-section__description.css);
+@import url(__title/results-section__title.css);
+
+.results-section {
+    background: #F5F6F7;
+    align-items: center;
+}

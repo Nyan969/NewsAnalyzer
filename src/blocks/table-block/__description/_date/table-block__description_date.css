@@ -1,0 +1,10 @@
+.table-block__description_date {
+    width: 104px;
+}
+
+@media screen and (max-width: 320px) {
+    .table-block__description_date {
+        width: 64px;
+    }
+}
+
