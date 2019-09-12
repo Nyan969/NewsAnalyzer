@@ -1,9 +1,17 @@
 .news-card__text-content {
     padding: 20px 24px 24px;
+    height: 260px;
 }
 
 @media screen and (max-width: 768px) {
     .news-card__text-content {
         padding: 16px;
+        height: 238px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .news-card__text-content {
+        height: 218px;
     }
 }
