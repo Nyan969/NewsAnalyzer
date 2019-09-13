@@ -1,7 +1,7 @@
 import "../style.css";
 import "../../node_modules/@glidejs/glide/dist/css/glide.core.css";
 import "../../node_modules/@glidejs/glide/dist/css/glide.theme.css";
-import Request from '../request';
+import Requests from '../requests';
 import CommitCardList from '../commit-card-list';
 import Glide from '@glidejs/glide';
 
@@ -36,7 +36,7 @@ const glide = new Glide('.glide', {
         }
     }
 });
-const data = new Request().commit();
+const data = new Requests().commit();
 console.log(data);
 //new CommitCardList().create(data);
 

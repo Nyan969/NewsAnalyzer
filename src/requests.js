@@ -1,6 +1,6 @@
 import {API_SETTINGS} from './settings';
 
-export default class Request {
+export default class Requests {
     constructor() {
     }
 

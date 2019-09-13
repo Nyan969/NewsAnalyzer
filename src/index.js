@@ -1,5 +1,5 @@
 import "./style.css";
-import Request from './request';
+import Requests from './requests';
 import NewsCardList from './news-card-list';
 
 document.forms.search.addEventListener('submit', buttonClick);
