@@ -7,5 +7,6 @@ document.forms.search.addEventListener('submit', buttonClick);
 function buttonClick(event) {
     event.preventDefault();
     const Keywords = document.forms.search.elements.Keywords.value;
-    new NewsCardList().create(new Requests().news(Keywords));
+    const data = new Requests().news(Keywords);
+    new NewsCardList().create(data);
 }

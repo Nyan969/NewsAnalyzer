@@ -14,13 +14,13 @@ export default class Requests {
             });
     }
 
-    commit() {
+    commit(callback) {
         fetch(API_SETTINGS.GIT_URL)
             .then(function (response) {
                 return response.json();
             })
             .then((data) => {
-                return data
+                callback(data)
             });
     }
 

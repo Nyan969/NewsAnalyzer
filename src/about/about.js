@@ -36,8 +36,7 @@ const glide = new Glide('.glide', {
         }
     }
 });
-const data = new Requests().commit();
-console.log(data);
-//new CommitCardList().create(data);
+const commitCardList = new CommitCardList();
+new Requests().commit(commitCardList.create);
 
 glide.mount();
