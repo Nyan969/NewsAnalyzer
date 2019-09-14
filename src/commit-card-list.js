@@ -1,3 +1,6 @@
+import Glide from "@glidejs/glide";
+import {MONTHS} from "./settings";
+
 export default class CommitCardList {
     constructor() {
 
@@ -40,7 +43,53 @@ export default class CommitCardList {
             // n++;
 
         });
+        this.createGlide();
+    }
 
+    createGlide() {
+        const glide = new Glide('.glide', {
+            focusAt: "center",
+            startAt: 3,
+            perView: 4,
+            peek: 0,
+            gap: 16,
+            breakpoints: {
+                320: {
+                    gap: 8,
+                    peek: 16,
+                    perView: 1
+                },
+                540: {
+                    perView: 1,
+                    gap: 8,
+                    peek: 40,
+                },
+                768: {
+                    perView: 2,
+                    gap: 8
+                },
+                1040: {
+                    perView: 3,
+                    peek: 0
+                },
+                1440: {
+                    perView: 3,
+                    peek: 88
+                }
+            }
+        });
+        glide.mount();
+    }
+
+    startPreloader() {
+        const preloaderTemplate = document.querySelector('#preloader-template');
+        let preloader = document.importNode(preloaderTemplate.content, true);
+        document.querySelector('.slider-box').appendChild(preloader);
+    }
+
+    stopPreloader() {
+        document.querySelector('.circle-preloader').remove();
+        document.querySelector('.results-section__description').remove();
     }
 
 }
