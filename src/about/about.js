@@ -8,4 +8,3 @@ const commitCardList = new CommitCardList();
 commitCardList.startPreloader();
 new Requests().commit(commitCardList.createCard, commitCardList.stopPreloader);
 
-glide.mount();
