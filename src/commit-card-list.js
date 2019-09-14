@@ -3,13 +3,12 @@ import {MONTHS} from "./settings";
 
 export default class CommitCardList {
     constructor() {
-
+        this.createCard = this.createCard.bind(this);
     }
 
-    create(data) {
+    createCard(data) {
         const commitCardTemplate = document.querySelector('#commit-card-template');
-        //  const bulletTemplate = document.querySelector('#bullet-template');
-
+        const bulletTemplate = document.querySelector('#bullet-template');
         const commitCardImage = commitCardTemplate.content.querySelector('.commit-card__image');
         const commitCardTitle = commitCardTemplate.content.querySelector('.commit-card__title');
         const commitCardText = commitCardTemplate.content.querySelector('.commit-card__description');
@@ -17,31 +16,28 @@ export default class CommitCardList {
         const commitCardMail = commitCardTemplate.content.querySelector('.commit-card__info_mail');
         const commitCardLink = commitCardTemplate.content.querySelector('.commit-card__link');
 
-        // let n = 0;
-
-        // const glideBullet = bulletTemplate.querySelector('.slider-box__bullet');
+        let numb = 0;
+        const glideBullet = bulletTemplate.content.querySelector('.glide__bullet');
 
         data.forEach(item => {
-            console.log(item);
-            //    console.log(glideBullet);
-            //    glideBullet.setAttribute('data-glide-dir', `=${n}`);
-
-            // commitCardImage.setAttribute('src', `${item.author['avatar_url']}`);
-            commitCardTitle.textContent = item.commit.committer['name'];
+            glideBullet.setAttribute('data-glide-dir', `=${numb}`);
+            const date = new Date(Date.parse(item.commit['committer']['date']));
+            const avatar = (item.author === null ? 'https://avatars2.githubusercontent.com/u/53269794?s=460&v=4' : item.author['avatar_url']);
+            commitCardImage.setAttribute('src', `${avatar}`);
+            commitCardTitle.textContent = item.commit['committer']['name'];
             commitCardText.textContent = item.commit['message'];
-            commitCardDate.textContent = item.commit.committer['date'];
-            commitCardMail.textContent = item.commit.committer['email'];
+            commitCardDate.textContent = `${date.getDate()} ${MONTHS[`${date.getMonth()}`]}, ${date.getFullYear()}`;
+            commitCardMail.textContent = item.commit['committer']['email'];
             commitCardLink.setAttribute('href', `${item['html_url']}`);
 
 
-            let clone = document.importNode(commitCardTemplate.content, true);
-            document.querySelector('.glide__slides').appendChild(clone);
+            let commitCard = document.importNode(commitCardTemplate.content, true);
+            document.querySelector('.glide__slides').appendChild(commitCard);
 
-            // let bullet = document.importNode(bulletTemplate.content, true);
-            // document.querySelector('.glide__bullets').appendChild(bullet);
-            //
-            // n++;
+            let bullet = document.importNode(bulletTemplate.content, true);
+            document.querySelector('.glide__bullets').appendChild(bullet);
 
+            numb++;
         });
         this.createGlide();
     }
@@ -93,3 +89,4 @@ export default class CommitCardList {
     }
 
 }
+
