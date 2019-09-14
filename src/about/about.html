@@ -135,6 +135,8 @@
             </span>
         </div>
         <div class="slider-box">
+            <!-- Шаблон прелоудера тут -->
+
             <div class="glide">
                 <div data-glide-el="track" class="glide__track slider-box__gradient">
                     <ul class="glide__slides">
@@ -261,6 +263,15 @@
 <template id="bullet-template">
     <button class="glide__bullet slider-box__bullet" data-glide-dir="=0"></button>
 </template>
+
+<!-- шаблон прелодера -->
+<template id="preloader-template">
+    <i class="circle-preloader"></i>
+    <p class="results-section__description">
+        Идет загрузка коммитов...
+    </p>
+</template>
+
 <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
 
 </body>
