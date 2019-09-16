@@ -2,6 +2,7 @@ import {MONTHS} from "./settings";
 
 export default class NewsCardList {
     constructor() {
+        this.addToStorage = this.addToStorage.bind(this);
         this.showMore = this.showMore.bind(this);
         this.processing = this.processing.bind(this);
         this.remove = this.remove.bind(this);
@@ -12,6 +13,7 @@ export default class NewsCardList {
     connect() {
         this.button.addEventListener('click', this.showMore);
     }
+
     processing(data) {
         this.data = data;
         console.log(this.data);
@@ -29,6 +31,13 @@ export default class NewsCardList {
 
     showMore() {
         this.processing(this.data);
+    }
+
+    addToStorage(data) {
+        if (data.articles.length !== 0) {
+            localStorage.setItem('data', JSON.stringify(data));
+        }
+        this.processing(JSON.parse(localStorage.getItem('data')))
     }
 
     createCard(data) {
