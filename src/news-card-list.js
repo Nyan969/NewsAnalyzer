@@ -2,10 +2,36 @@ import {MONTHS} from "./settings";
 
 export default class NewsCardList {
     constructor() {
-
+        this.showMore = this.showMore.bind(this);
+        this.processing = this.processing.bind(this);
+        this.remove = this.remove.bind(this);
+        this.button = document.querySelector('.card-section__button');
+        this.connect = this.connect.bind(this);
     }
 
-    create(arr) {
+    connect() {
+        this.button.addEventListener('click', this.showMore);
+    }
+    processing(data) {
+        this.data = data;
+        console.log(this.data);
+        if (this.data.articles.length === 0) {
+            this.renderNotFound();
+        } else if (this.data.articles.length > 3) {
+            this.button.classList.remove('button_disabled');
+            this.createCard(this.data.articles.splice(0, 3));
+        } else {
+            document.querySelector('.card-section__button').classList.add('button_disabled');
+            this.createCard(this.data.articles);
+            this.button.removeEventListener('click', this.showMore);
+        }
+    }
+
+    showMore() {
+        this.processing(this.data);
+    }
+
+    createCard(data) {
         const newsCardTemplate = document.querySelector('#news-card-template');
 
         const newsCardImage = newsCardTemplate.content.querySelector('.news-card__image');
@@ -15,37 +41,53 @@ export default class NewsCardList {
         const newsCardSource = newsCardTemplate.content.querySelector('.news-card__source');
         const newsCardLink = newsCardTemplate.content.querySelector('.news-card__link');
 
-        if (arr.length > 3) {
-            document.querySelector('.card-section__button').classList.remove('button_disabled');
-            let addarr = arr.splice(0, 3);
-            addarr.forEach(item => {
-                newsCardImage.setAttribute('src', `${item.urlToImage}`);
-                newsCardTitle.textContent = item.title;
-                newsCardText.textContent = item.description;
-                newsCardDate.textContent = item.publishedAt;
-                newsCardSource.textContent = item.source['name'];
-                newsCardLink.setAttribute('href', `${item.url}`);
+        const cardSectionTitleBlock = document.querySelector('.card-section__title-block');
+        cardSectionTitleBlock.setAttribute('style', `display: flex`);
+        const cardSection = document.querySelector('.card-section');
+        cardSection.setAttribute('style', `display: flex`);
 
-                let clone = document.importNode(newsCardTemplate.content, true);
-                document.querySelector('.card-section__news-grid').appendChild(clone);
-            });
+        data.forEach(item => {
+            const date = new Date(Date.parse(item.publishedAt));
 
-        } else {
-            document.querySelector('.card-section__button').classList.add('button_disabled');
+            newsCardImage.setAttribute('src', `${item.urlToImage}`);
+            newsCardTitle.textContent = item.title;
+            newsCardText.textContent = item.description;
+            newsCardDate.textContent = `${date.getDate()} ${MONTHS[`${date.getMonth()}`]}, ${date.getFullYear()}`;
+            newsCardSource.textContent = item.source['name'];
+            newsCardLink.setAttribute('href', `${item.url}`);
 
-            arr.forEach(item => {
-                newsCardImage.setAttribute('src', `${item.urlToImage}`);
-                newsCardTitle.textContent = item.title;
-                newsCardText.textContent = item.description;
-                newsCardDate.textContent = item.publishedAt;
-                newsCardSource.textContent = item.source['name'];
-                newsCardLink.setAttribute('href', `${item.url}`);
+            let newsCard = document.importNode(newsCardTemplate.content, true);
+            document.querySelector('.card-section__news-grid').appendChild(newsCard);
+        });
 
-                let clone = document.importNode(newsCardTemplate.content, true);
-                document.querySelector('.card-section__news-grid').appendChild(clone);
 
-                const cardSection = document.querySelector('.card-section');
-                cardSection.setAttribute('style', `display: flex`);
+    }
+
+    remove() {
+        this.data = undefined;
+        this.button.removeEventListener('click', this.showMore);
+        let element = document.querySelector('.card-section__news-grid');
+        while (element.firstChild) {
+            element.removeChild(element.firstChild);
+        }
+        let res = document.querySelector('.results-section');
+        while (res.firstChild) {
+            res.removeChild(res.firstChild);
+        }
+
+        const cardSection = document.querySelector('.card-section');
+        cardSection.removeAttribute('style');
+        const cardSectionTitleBlock = document.querySelector('.card-section__title-block');
+        cardSectionTitleBlock.removeAttribute('style');
+    }
+
+    startPreloader() {
+        const cardSection = document.querySelector('.card-section');
+        cardSection.setAttribute('style', `display: flex`);
+        const preloaderTemplate = document.querySelector('#preloader-template');
+        let preloader = document.importNode(preloaderTemplate.content, true);
+        document.querySelector('.results-section').appendChild(preloader);
+    }
 
     stopPreloader() {
         document.querySelector('.circle-preloader').remove();
