@@ -4,23 +4,20 @@ export default class Requests {
     constructor() {
     }
 
-    news(keywords, callback) {
+    news(keywords, beforeRequest, callback, afterRequest, error) {
+        beforeRequest();
         fetch(`${API_SETTINGS.NEW_URL}q=${keywords}&${API_SETTINGS.NEW_PARAMS}`)
             .then(function (response) {
                 return response.json();
             })
             .then((data) => {
                 callback(data);
-            });
-    }
-
-    newsInTitle(Keywords) {
-        fetch(`${API_SETTINGS.NEW_URL}qInTitle=${Keywords}&${API_SETTINGS.NEW_PARAMS}`)
-            .then(function (response) {
-                return response.json();
             })
-            .then((data) => {
-                return data.articles;
+            .catch((err) => {
+                error(err);
+            })
+            .finally(() => {
+                afterRequest();
             });
     }
 
@@ -31,6 +28,9 @@ export default class Requests {
             })
             .then((data) => {
                 callback(data)
+            })
+            .catch((err) => {
+                console.error(err);
             })
             .finally(() => {
                 afterRequest();

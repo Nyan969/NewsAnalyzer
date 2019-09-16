@@ -1,7 +1,4 @@
-/*let element = document.querySelector('.card-section__news-grid');
-while (element.firstChild) {
-    element.removeChild(element.firstChild);
-}*/
+import {MONTHS} from "./settings";
 
 export default class NewsCardList {
     constructor() {
@@ -50,11 +47,27 @@ export default class NewsCardList {
                 const cardSection = document.querySelector('.card-section');
                 cardSection.setAttribute('style', `display: flex`);
 
+    stopPreloader() {
+        document.querySelector('.circle-preloader').remove();
+        document.querySelector('.results-section__description').remove();
+    }
 
-                const addButton = document.querySelector('.card-section__button');
-                addButton.addEventListener('click', create);
-            });
+    renderError(err) {
+        const errorTemplate = document.querySelector('#error-template');
 
-        }
+        const errorTitle = errorTemplate.content.querySelector('.results-section__title');
+        const errorDescription = errorTemplate.content.querySelector('.results-section__description');
+
+        errorTitle.textContent = 'Что-то пошло не так...';
+        errorDescription.textContent = `${err}`;
+
+        let error = document.importNode(errorTemplate.content, true);
+        document.querySelector('.results-section').appendChild(error);
+    }
+
+    renderNotFound() {
+        const notFoundTemplate = document.querySelector('#error-template');
+        let notFound = document.importNode(notFoundTemplate.content, true);
+        document.querySelector('.results-section').appendChild(notFound);
     }
 }
