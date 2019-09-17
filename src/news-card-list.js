@@ -7,7 +7,7 @@ export default class NewsCardList {
         this.processing = this.processing.bind(this);
         this.remove = this.remove.bind(this);
         this.button = document.querySelector('.card-section__button');
-        this.connect = this.connect.bind(this);
+        this.connect();
     }
 
     connect() {
@@ -16,7 +16,6 @@ export default class NewsCardList {
 
     processing(data) {
         this.data = data;
-        console.log(this.data);
         if (this.data.articles.length === 0) {
             this.renderNotFound();
         } else if (this.data.articles.length > 3) {
