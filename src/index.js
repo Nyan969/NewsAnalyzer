@@ -15,5 +15,6 @@ function buttonClick(event) {
     const keywords = document.forms.search.elements.keywords.value;
     newsCardList.remove();
     new Requests().news(keywords, newsCardList.startPreloader, newsCardList.addToStorage, newsCardList.stopPreloader, newsCardList.renderError);
+    newsCardList.connect();
     localStorage.setItem('keywords', keywords);
 }
