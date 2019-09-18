@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.3.0",
+    "autoprefixer": "^9.6.1",
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.1.4"
   }

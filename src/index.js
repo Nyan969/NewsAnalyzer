@@ -3,6 +3,9 @@ import Requests from './requests';
 import NewsCardList from './news-card-list';
 
 const newsCardList = new NewsCardList();
+// новости я так и не почитал,
+// ошибка Uncaught TypeError: Cannot read property 'totalResults' of null
+
 if (JSON.parse(localStorage.getItem('data')).totalResults !== 0) {
     newsCardList.processing(JSON.parse(localStorage.getItem('data')));
     document.forms.search.elements.keywords.value = `${localStorage.getItem('keywords')}`
@@ -18,3 +21,4 @@ function buttonClick(event) {
     newsCardList.connect();
     localStorage.setItem('keywords', keywords);
 }
+// нужна пошаговая инструкция как запустить проект 

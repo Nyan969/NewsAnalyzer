@@ -20,7 +20,7 @@ export default class Requests {
                 afterRequest();
             });
     }
-
+// можное лучше, можно объеденить в один метод
     commit(callback, afterRequest) {
         fetch(API_SETTINGS.GIT_URL)
             .then(function (response) {

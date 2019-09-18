@@ -1,3 +1,4 @@
+// Это очень правильное решение что вынесли сюда настройки
 const sixDaysInMillisecond = 6 * 24 * 60 * 60 * 1000;
 
 const today = new Date();
