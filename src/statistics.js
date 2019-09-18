@@ -15,7 +15,7 @@ export default class Statistics {
         this.articlesPerDay = {};
         this.count = 0;
         this.data.articles.forEach(item => {
-            if (item.title.includes(this.keywords)) {
+            if (item.title.toLowerCase().includes(this.keywords.toLowerCase())) {
                 this.count++;
                 const date = new Date(item.publishedAt.substring(0, 10)).getDate();
                 if (date in this.articlesPerDay) {
