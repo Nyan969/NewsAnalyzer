@@ -85,6 +85,8 @@ export default class NewsCardList {
         cardSection.removeAttribute('style');
         const cardSectionTitleBlock = document.querySelector('.card-section__title-block');
         cardSectionTitleBlock.removeAttribute('style');
+
+        document.querySelector('.card-section__button').classList.add('button_disabled');
     }
 
     startPreloader() {
