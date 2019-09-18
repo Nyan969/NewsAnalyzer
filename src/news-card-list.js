@@ -34,7 +34,7 @@ export default class NewsCardList {
 
     addToStorage(data) {
             localStorage.setItem('data', JSON.stringify(data));
-        this.processing(JSON.parse(localStorage.getItem('data')));
+            this.processing(JSON.parse(localStorage.getItem('data')));
     }
 
     createCard(data) {
@@ -113,6 +113,8 @@ export default class NewsCardList {
 
         let error = document.importNode(errorTemplate.content, true);
         document.querySelector('.results-section').appendChild(error);
+
+        localStorage.clear();
     }
 
     renderNotFound() {
