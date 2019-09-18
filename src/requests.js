@@ -8,10 +8,13 @@ export default class Requests {
         beforeRequest();
         fetch(`${API_SETTINGS.NEW_URL}q=${keywords}&${API_SETTINGS.NEW_PARAMS}`)
             .then(function (response) {
-                return response.json();
+                if (response.ok) {
+                    return response.json();
+                }
+                return Promise.reject(`Что-то пошло не так: ${response.status}`);
             })
             .then((data) => {
-                callback(data);
+                    callback(data);
             })
             .catch((err) => {
                 error(err);
