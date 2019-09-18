@@ -108,8 +108,8 @@ export default class NewsCardList {
         const errorTitle = errorTemplate.content.querySelector('.results-section__title');
         const errorDescription = errorTemplate.content.querySelector('.results-section__description');
 
-        errorTitle.textContent = 'Что-то пошло не так...';
-        errorDescription.textContent = `${err}`;
+        errorTitle.textContent = 'Упс...';
+        errorDescription.textContent = ` ${err}`;
 
         let error = document.importNode(errorTemplate.content, true);
         document.querySelector('.results-section').appendChild(error);
@@ -123,8 +123,8 @@ export default class NewsCardList {
         const errorTitle = notFoundTemplate.content.querySelector('.results-section__title');
         const errorDescription = notFoundTemplate.content.querySelector('.results-section__description');
 
-        errorTitle.textContent = 'Ничего не найдено';
-        errorDescription.textContent = `К сожалению по вашему запросу ничего не найдено.`;
+       // errorTitle.textContent = 'Ничего не найдено';
+      //  errorDescription.textContent = `К сожалению по вашему запросу ничего не найдено.`;
 
         let notFound = document.importNode(notFoundTemplate.content, true);
         document.querySelector('.results-section').appendChild(notFound);
