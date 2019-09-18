@@ -16,9 +16,7 @@ export default class NewsCardList {
 
     processing(data) {
         this.data = data;
-        if (this.data.articles.length === 0) {
-            this.renderNotFound();
-        } else if (this.data.articles.length > 3) {
+        if (this.data.articles.length > 3) {
             this.button.classList.remove('button_disabled');
             this.createCard(this.data.articles.splice(0, 3));
         } else {
@@ -35,8 +33,10 @@ export default class NewsCardList {
     addToStorage(data) {
         if (data.articles.length !== 0) {
             localStorage.setItem('data', JSON.stringify(data));
+            this.processing(JSON.parse(localStorage.getItem('data')))
+        } else {
+            this.renderNotFound();
         }
-        this.processing(JSON.parse(localStorage.getItem('data')))
     }
 
     createCard(data) {
