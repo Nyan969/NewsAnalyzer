@@ -3,8 +3,10 @@ import Requests from './requests';
 import NewsCardList from './news-card-list';
 
 const newsCardList = new NewsCardList();
-if (JSON.parse(localStorage.getItem('data')).totalResults !== 0) {
-    newsCardList.processing(JSON.parse(localStorage.getItem('data')));
+const searchData = localStorage.getItem('data');
+
+if (searchData && JSON.parse(searchData).totalResults !== 0) {
+    newsCardList.processing(JSON.parse(searchData));
     document.forms.search.elements.keywords.value = `${localStorage.getItem('keywords')}`
 }
 
