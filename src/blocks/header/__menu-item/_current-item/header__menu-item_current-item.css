@@ -1,7 +1,7 @@
 .header__menu-item_current-item {
     color: #000 !important;
     border-bottom: #000 2px solid !important;
-    padding-bottom: 27px;
+    padding-bottom: 28px;
 }
 
 @media screen and (max-width: 768px) {
