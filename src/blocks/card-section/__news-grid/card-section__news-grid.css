@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 16px;
-    justify-items: center;
+    justify-items: flex-start;
     width: 100%;
 }
 
@@ -24,5 +24,6 @@
         grid-template-columns: repeat(1,  minmax(288px, 1fr));
         gap: 8px;
         padding-top: 40px;
+        justify-items: center;
     }
 }

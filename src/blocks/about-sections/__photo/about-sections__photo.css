@@ -1,4 +1,4 @@
-.about-sections__image {
+.about-sections__photo {
     border-radius: 1000px;
     width: 464px;
     height: 464px;
@@ -6,10 +6,11 @@
     margin-right: 56px;
     background-size: cover;
     background-position: center;
+    background-image: url("../../../images/news.jpg");
 }
 
 @media screen and (max-width: 768px) {
-    .about-sections__image {
+    .about-sections__photo {
         width: 232px;
         height: 232px;
         min-width: 232px;
@@ -18,7 +19,7 @@
 }
 
 @media screen and (max-width: 320px) {
-    .about-sections__image {
+    .about-sections__photo {
         width: 272px;
         height: 272px;
         min-width: 272px;

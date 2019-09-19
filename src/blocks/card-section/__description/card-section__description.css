@@ -6,6 +6,11 @@
     transition: opacity 0.25s ease 0s;
 }
 
+.card-section__description:visited {
+    color: #000;
+}
+
+
 .card-section__description:hover {
     opacity: 0.5;
 }

@@ -10,7 +10,13 @@
     outline: none;
     font-family: 'Roboto';
 }
-
+.search-section__input:-webkit-autofill,
+.search-section__input:-webkit-autofill:hover,
+.search-section__input:-webkit-autofill:active,
+.search-section__input:-webkit-autofill:focus {
+    background-color: #fff !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
 @media screen and (max-width: 446px) {
     .search-section__input {
         max-width: 288px;

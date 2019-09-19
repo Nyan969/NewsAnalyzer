@@ -1,3 +1,7 @@
+.card-section_commit {
+    display: flex !important;
+}
+
 @media screen and (max-width: 320px) {
 
     .card-section_commit {

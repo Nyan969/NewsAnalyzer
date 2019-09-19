@@ -5,6 +5,9 @@
 
 .slider-box {
     width: calc((100% + (100% + 400px))/2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (max-width: 768px) {
