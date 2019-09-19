@@ -14,7 +14,7 @@ export default class Requests {
                 return Promise.reject(`Что-то пошло не так: ${response.status}`);
             })
             .then((data) => {
-                    callback(data);
+                callback(data);
             })
             .catch((err) => {
                 error(err);
@@ -27,7 +27,10 @@ export default class Requests {
     commit(callback, afterRequest) {
         fetch(API_SETTINGS.GIT_URL)
             .then(function (response) {
-                return response.json();
+                if (response.ok) {
+                    return response.json();
+                }
+                return Promise.reject(`Что-то пошло не так: ${response.status}`);
             })
             .then((data) => {
                 callback(data)
