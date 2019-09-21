@@ -5,7 +5,7 @@ import NewsCardList from './news-card-list';
 const newsCardList = new NewsCardList();
 const searchData = localStorage.getItem('data');
 
-if (searchData && JSON.parse(searchData).totalResults !== 0) {
+if (searchData) {
     newsCardList.processing(JSON.parse(searchData));
     document.forms.search.elements.keywords.value = `${localStorage.getItem('keywords')}`
 }

@@ -128,5 +128,7 @@ export default class NewsCardList {
 
         let notFound = document.importNode(notFoundTemplate.content, true);
         document.querySelector('.results-section').appendChild(notFound);
+
+        localStorage.clear();
     }
 }
