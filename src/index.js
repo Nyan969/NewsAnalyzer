@@ -10,9 +10,7 @@ if (searchData && JSON.parse(searchData).totalResults !== 0) {
     document.forms.search.elements.keywords.value = `${localStorage.getItem('keywords')}`
 }
 
-document.forms.search.addEventListener('submit', buttonClick);
-
-function buttonClick(event) {
+function clickSearchButton(event) {
     event.preventDefault();
     const keywords = document.forms.search.elements.keywords.value;
     newsCardList.remove();
@@ -20,3 +18,6 @@ function buttonClick(event) {
     newsCardList.connect();
     localStorage.setItem('keywords', keywords);
 }
+
+document.forms.search.addEventListener('submit', clickSearchButton);
+
