@@ -1,59 +1,55 @@
 import {WEEKDAYS} from "./settings";
 
 export default class Statistics {
+    #firstDay = new Date(new Date().getTime() - 6 * 24 * 60 * 60 * 1000);
 
     constructor(keywords, data) {
         this.keywords = keywords;
         this.data = data;
-        this.countTitleResults = this.countTitleResults.bind(this);
-        this.getArticlesPerDay = this.getArticlesPerDay.bind(this);
-        this.displayGeneralStatistics = this.displayGeneralStatistics.bind(this);
-        this.plottingDailyStatistics = this.plottingDailyStatistics.bind(this);
         this.countTitleResults();
         this.getArticlesPerDay();
-        this.plottingDailyStatistics();
     }
 
     countTitleResults() {
-        this.count = 0;
+        let count = 0;
         this.data.articles.forEach(item => {
             if (item.title.toLowerCase().includes(this.keywords.toLowerCase())) {
-                this.count++;
+                count++;
             }
         });
+        this.displayGeneralStatistics(count);
     }
 
     getArticlesPerDay() {
-        this.articlesPerDay = {};
+        const articlesPerDay = {};
         this.data.articles.forEach(item => {
-        const date = new Date(item.publishedAt.substring(0, 10)).getDate();
-        if (date in this.articlesPerDay) {
-            this.articlesPerDay[date]++;
-        } else {
-            this.articlesPerDay[date] = 1;
-        }
-        this.displayGeneralStatistics();
+            const date = new Date(item.publishedAt.substring(0, 10)).getDate();
+            if (date in articlesPerDay) {
+                articlesPerDay[date]++;
+            } else {
+                articlesPerDay[date] = 1;
+            }
         });
+        this.plottingDailyStatistics(articlesPerDay)
     }
 
-    displayGeneralStatistics() {
+    displayGeneralStatistics(count) {
         document.querySelector('.keywords').textContent = this.keywords;
         document.querySelector('.total-results').textContent = this.data.totalResults;
-        document.querySelector('.title-results').textContent = this.count;
+        document.querySelector('.title-results').textContent = count;
     }
 
-    plottingDailyStatistics() {
-        let firstDay = new Date(new Date().getTime() - 6 * 24 * 60 * 60 * 1000);
+    plottingDailyStatistics(articlesPerDay) {
         for (let i = 0; i <= 6; i++) {
             const dayInMillisecond = i * 24 * 60 * 60 * 1000;
-            const date =  new Date(firstDay.getTime() + dayInMillisecond);
+            const date = new Date(this.#firstDay.getTime() + dayInMillisecond);
             const day = date.getDate();
             const wday = WEEKDAYS[`${date.getDay()}`];
-            document.querySelector(`.day${i}`).textContent =`${day}, ${wday}`;
-            if (day in this.articlesPerDay) {
-                const percent = this.articlesPerDay[`${day}`] * 100 / this.data.totalResults;
+            document.querySelector(`.day${i}`).textContent = `${day}, ${wday}`;
+            if (day in articlesPerDay) {
+                const percent = articlesPerDay[`${day}`] * 100 / this.data.totalResults;
                 document.querySelector(`.graph${i}`).setAttribute('width', `${percent}%`);
-                document.querySelector(`.value${i}`).textContent = `${this.articlesPerDay[`${day}`]}`;
+                document.querySelector(`.value${i}`).textContent = `${articlesPerDay[`${day}`]}`;
             } else {
                 document.querySelector(`.graph${i}`).setAttribute('width', '0%');
                 document.querySelector(`.value${i}`).textContent = '0';

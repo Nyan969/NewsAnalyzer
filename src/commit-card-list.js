@@ -2,39 +2,37 @@ import Glide from "@glidejs/glide";
 import {MONTHS} from "./settings";
 
 export default class CommitCardList {
+    #commitCardTemplate = document.querySelector('#commit-card-template');
+    #commitCardImage = this.#commitCardTemplate.content.querySelector('.commit-card__image');
+    #commitCardTitle = this.#commitCardTemplate.content.querySelector('.commit-card__title');
+    #commitCardText = this.#commitCardTemplate.content.querySelector('.commit-card__description');
+    #commitCardDate = this.#commitCardTemplate.content.querySelector('.commit-card__info');
+    #commitCardMail = this.#commitCardTemplate.content.querySelector('.commit-card__info_mail');
+    #commitCardLink = this.#commitCardTemplate.content.querySelector('.commit-card__link');
+
+    #bulletTemplate = document.querySelector('#bullet-template');
+    #glideBullet = this.#bulletTemplate.content.querySelector('.glide__bullet');
+
     constructor() {
         this.createCard = this.createCard.bind(this);
     }
 
     createCard(data) {
-        const commitCardTemplate = document.querySelector('#commit-card-template');
-        const bulletTemplate = document.querySelector('#bullet-template');
-        const commitCardImage = commitCardTemplate.content.querySelector('.commit-card__image');
-        const commitCardTitle = commitCardTemplate.content.querySelector('.commit-card__title');
-        const commitCardText = commitCardTemplate.content.querySelector('.commit-card__description');
-        const commitCardDate = commitCardTemplate.content.querySelector('.commit-card__info');
-        const commitCardMail = commitCardTemplate.content.querySelector('.commit-card__info_mail');
-        const commitCardLink = commitCardTemplate.content.querySelector('.commit-card__link');
-
         let numb = 0;
-        const glideBullet = bulletTemplate.content.querySelector('.glide__bullet');
-
         data.forEach(item => {
-            glideBullet.setAttribute('data-glide-dir', `=${numb}`);
+            this.#glideBullet.setAttribute('data-glide-dir', `=${numb}`);
             const date = new Date(Date.parse(item.commit['committer']['date']));
             const avatar = (item.author === null ? 'https://avatars2.githubusercontent.com/u/53269794?s=460&v=4' : item.author['avatar_url']);
-            commitCardImage.setAttribute('src', `${avatar}`);
-            commitCardTitle.textContent = item.commit['committer']['name'];
-            commitCardText.textContent = item.commit['message'];
-            commitCardDate.textContent = `${date.getDate()} ${MONTHS[`${date.getMonth()}`]}, ${date.getFullYear()}`;
-            commitCardMail.textContent = item.commit['committer']['email'];
-            commitCardLink.setAttribute('href', `${item['html_url']}`);
+            this.#commitCardImage.setAttribute('src', `${avatar}`);
+            this.#commitCardTitle.textContent = item.commit['committer']['name'];
+            this.#commitCardText.textContent = item.commit['message'];
+            this.#commitCardDate.textContent = `${date.getDate()} ${MONTHS[`${date.getMonth()}`]}, ${date.getFullYear()}`;
+            this.#commitCardMail.textContent = item.commit['committer']['email'];
+            this.#commitCardLink.setAttribute('href', `${item['html_url']}`);
 
-
-            let commitCard = document.importNode(commitCardTemplate.content, true);
+            const commitCard = document.importNode(this.#commitCardTemplate.content, true);
             document.querySelector('.glide__slides').appendChild(commitCard);
-
-            let bullet = document.importNode(bulletTemplate.content, true);
+            const bullet = document.importNode(this.#bulletTemplate.content, true);
             document.querySelector('.glide__bullets').appendChild(bullet);
 
             numb++;
@@ -79,7 +77,7 @@ export default class CommitCardList {
 
     showPreloader() {
         const preloaderTemplate = document.querySelector('#preloader-template');
-        let preloader = document.importNode(preloaderTemplate.content, true);
+        const preloader = document.importNode(preloaderTemplate.content, true);
         document.querySelector('.slider-box').appendChild(preloader);
     }
 
