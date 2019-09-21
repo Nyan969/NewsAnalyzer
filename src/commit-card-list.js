@@ -77,13 +77,13 @@ export default class CommitCardList {
         glide.mount();
     }
 
-    startPreloader() {
+    showPreloader() {
         const preloaderTemplate = document.querySelector('#preloader-template');
         let preloader = document.importNode(preloaderTemplate.content, true);
         document.querySelector('.slider-box').appendChild(preloader);
     }
 
-    stopPreloader() {
+    hidePreloader() {
         document.querySelector('.circle-preloader').remove();
         document.querySelector('.results-section__description').remove();
     }

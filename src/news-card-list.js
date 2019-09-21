@@ -89,7 +89,7 @@ export default class NewsCardList {
         document.querySelector('.card-section__button').classList.add('button_disabled');
     }
 
-    startPreloader() {
+    showPreloader() {
         const cardSection = document.querySelector('.card-section');
         cardSection.setAttribute('style', `display: flex`);
         const preloaderTemplate = document.querySelector('#preloader-template');
@@ -97,7 +97,7 @@ export default class NewsCardList {
         document.querySelector('.results-section').appendChild(preloader);
     }
 
-    stopPreloader() {
+    hidePreloader() {
         document.querySelector('.circle-preloader').remove();
         document.querySelector('.results-section__description').remove();
     }
