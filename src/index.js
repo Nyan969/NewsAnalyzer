@@ -12,7 +12,7 @@ if (searchData) {
 
 function clickSearchButton(event) {
     event.preventDefault();
-    const keywords = document.forms.search.elements.keywords.value;
+    const keywords = document.forms.search.elements.keywords.value.trim();
     newsCardList.remove();
     new Request().news(keywords, newsCardList.showPreloader, newsCardList.addToStorage, newsCardList.hidePreloader, newsCardList.renderError);
     newsCardList.connect();
