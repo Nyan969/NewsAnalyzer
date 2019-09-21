@@ -11,8 +11,8 @@
     }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 429px) {
     .header__menu-item_current-item {
-        padding-bottom: 15px;
+        padding-bottom: 17px;
     }
 }
