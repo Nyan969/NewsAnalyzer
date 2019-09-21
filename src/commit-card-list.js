@@ -23,7 +23,7 @@ export default class CommitCardList {
             this.#glideBullet.setAttribute('data-glide-dir', `=${numb}`);
             const date = new Date(Date.parse(item.commit['committer']['date']));
             const avatar = (item.author === null ? 'https://avatars2.githubusercontent.com/u/53269794?s=460&v=4' : item.author['avatar_url']);
-            this.#commitCardImage.setAttribute('src', `${avatar}`);
+            this.#commitCardImage.setAttribute('data-src', `${avatar}`);
             this.#commitCardTitle.textContent = item.commit['committer']['name'];
             this.#commitCardText.textContent = item.commit['message'];
             this.#commitCardDate.textContent = `${date.getDate()} ${MONTHS[`${date.getMonth()}`]}, ${date.getFullYear()}`;
@@ -85,6 +85,5 @@ export default class CommitCardList {
         document.querySelector('.circle-preloader').remove();
         document.querySelector('.results-section__description').remove();
     }
-
 }
 
