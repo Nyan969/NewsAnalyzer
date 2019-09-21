@@ -1,7 +1,8 @@
 import "./style.css";
 import Request from './request';
 import NewsCardList from './news-card-list';
-import bgLazyLoad from './lazy-load-Image';
+import LazyLoad from './lazy-load-Image';
+
 
 const newsCardList = new NewsCardList();
 const searchData = localStorage.getItem('data');
@@ -22,4 +23,5 @@ function clickSearchButton(event) {
 
 document.forms.search.addEventListener('submit', clickSearchButton);
 
-document.addEventListener("DOMContentLoaded", bgLazyLoad);
+const lazyLoad = new LazyLoad();
+document.addEventListener("DOMContentLoaded", lazyLoad.lazyLoadBG());
