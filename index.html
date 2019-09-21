@@ -7,7 +7,7 @@
     <meta name="author" content="Mariya Luschy">
     <meta name="description" content="determines how popular a piece of news is in the world">
     <title>News Analyzer</title>
-    <link rel="stylesheet" href="style.ba872b55786518cfd6a1.css">
+    <link rel="stylesheet" href="style.ea474412e123a6a2fba5.css">
     <link rel="icon" href="./images/favicon.png" type="image/png">
 </head>
 <body>
@@ -32,7 +32,8 @@
                 </p>
                 <form class="search-section__input-container" name="search">
                     <input class="search-section__input" placeholder="Введите тему новости" type="text" required
-                           name="keywords" minlength="3">
+                           name="keywords" minlength="2" pattern="^([А-яЁёA-z0-9]([А-яЁёA-z0-9-]+\s?)+)$"
+                           title="текст не должен содержать более одного пробела подряд и спец.символы(кроме тире); не может начинаться с тире">
                     <button class="button search-section__button" type="submit" name="button">Искать</button>
                 </form>
             </div>
@@ -159,6 +160,6 @@
         Идет поиск новостей...
     </p>
 </template>
-<script src="main.7d854522d28d517d1f2b.js"></script>
+<script src="main.d088d1cc1158ff64569b.js"></script>
 </body>
 </html>
