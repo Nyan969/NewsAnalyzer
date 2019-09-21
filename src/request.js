@@ -1,10 +1,10 @@
 import {API_SETTINGS} from './settings';
 
-export default class Requests {
+export default class Request {
     constructor() {
     }
 
-    news(keywords, beforeRequest, callback, afterRequest, error) {
+    news(keywords, beforeRequest, renderCard, afterRequest, error) {
         beforeRequest();
         fetch(`${API_SETTINGS.NEW_URL}q=${keywords}&${API_SETTINGS.NEW_PARAMS}`)
             .then(function (response) {
@@ -14,7 +14,7 @@ export default class Requests {
                 return Promise.reject(`Что-то пошло не так: ${response.status}`);
             })
             .then((data) => {
-                callback(data);
+                renderCard(data);
             })
             .catch((err) => {
                 error(err);
@@ -24,7 +24,7 @@ export default class Requests {
             });
     }
 
-    commit(callback, afterRequest) {
+    commit(renderCard, afterRequest) {
         fetch(API_SETTINGS.GIT_URL)
             .then(function (response) {
                 if (response.ok) {
@@ -33,7 +33,7 @@ export default class Requests {
                 return Promise.reject(`Что-то пошло не так: ${response.status}`);
             })
             .then((data) => {
-                callback(data)
+                renderCard(data)
             })
             .catch((err) => {
                 console.error(err);
