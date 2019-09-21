@@ -1,5 +1,5 @@
 import "./style.css";
-import Requests from './requests';
+import Request from './request';
 import NewsCardList from './news-card-list';
 
 const newsCardList = new NewsCardList();
@@ -16,7 +16,7 @@ function buttonClick(event) {
     event.preventDefault();
     const keywords = document.forms.search.elements.keywords.value;
     newsCardList.remove();
-    new Requests().news(keywords, newsCardList.startPreloader, newsCardList.addToStorage, newsCardList.stopPreloader, newsCardList.renderError);
+    new Request().news(keywords, newsCardList.showPreloader, newsCardList.addToStorage, newsCardList.hidePreloader, newsCardList.renderError);
     newsCardList.connect();
     localStorage.setItem('keywords', keywords);
 }
