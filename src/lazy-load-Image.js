@@ -1,12 +1,11 @@
 export default class LazyLoad {
-       constructor() {
+    constructor() {
     }
 
 //ленивая загрузка фоновых картинок
     lazyLoadBG() {
         const lazyloadBG = document.querySelectorAll(".bg-lazy");
         if ("IntersectionObserver" in window) {
-
             const imageObserver = new IntersectionObserver(function (entries, observer) {
                 entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
@@ -21,6 +20,7 @@ export default class LazyLoad {
             });
         } else {
             let lazyloadThrottleTimeout;
+
             function lazyload() {
                 if (lazyloadThrottleTimeout) {
                     clearTimeout(lazyloadThrottleTimeout);
@@ -67,6 +67,7 @@ export default class LazyLoad {
             });
         } else {
             let lazyloadThrottleTimeout;
+
             function lazyload() {
                 if (lazyloadThrottleTimeout) {
                     clearTimeout(lazyloadThrottleTimeout);
@@ -87,6 +88,7 @@ export default class LazyLoad {
                     }
                 }, 20);
             }
+
             document.addEventListener("scroll", lazyload);
             window.addEventListener("resize", lazyload);
             window.addEventListener("orientationChange", lazyload);
