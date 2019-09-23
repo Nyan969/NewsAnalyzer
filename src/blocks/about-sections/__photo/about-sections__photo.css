@@ -26,3 +26,8 @@
         margin: 0 0 24px;
     }
 }
+
+.bg-lazy {
+    background-image: none;
+    background-color: #F1F1FA;
+}

@@ -1,10 +1,21 @@
 import "../style.css";
 import "../../node_modules/@glidejs/glide/dist/css/glide.core.css";
 import "../../node_modules/@glidejs/glide/dist/css/glide.theme.css";
-import Requests from '../requests';
+import Request from '../request';
 import CommitCardList from '../commit-card-list';
+import LazyLoad from '../lazy-load-Image';
 
 const commitCardList = new CommitCardList();
-commitCardList.startPreloader();
-new Requests().commit(commitCardList.createCard, commitCardList.stopPreloader);
+commitCardList.showPreloader();
+new Request().commit(commitCardList.createCard, commitCardList.hidePreloader);
+const lazyLoad = new LazyLoad();
+document.addEventListener("DOMContentLoaded", lazyLoad.lazyLoadBG());
 
+//отслеживает загрузку карточек с коммитами
+let mutationObserver = new MutationObserver(function(mutations) {
+    if (document.querySelector('.lazy')){
+        document.addEventListener("DOMContentLoaded", lazyLoad.lazyLoadImage());
+    }
+});
+
+mutationObserver.observe(document.querySelector('.glide__slides'), {attributes: true, childList: true, characterData: true});

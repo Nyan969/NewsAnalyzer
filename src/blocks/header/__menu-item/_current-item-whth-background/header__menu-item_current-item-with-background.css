@@ -6,12 +6,12 @@
 
 @media screen and (max-width: 768px) {
     .header__menu-item_current-item-with-background {
-        padding-bottom: 18px;
+        padding-bottom: 20px;
     }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 429px) {
     .header__menu-item_current-item-with-background {
-        padding-bottom: 15px;
+        padding-bottom: 17px;
     }
 }

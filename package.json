@@ -24,6 +24,7 @@
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
@@ -35,7 +36,6 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "path": "^0.12.7",
     "postcss-loader": "^3.0.0",
-    "postcss-preset-env": "^6.7.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0",
@@ -44,6 +44,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.3.0",
     "babel-polyfill": "^6.26.0",
-    "core-js": "^3.1.4"
+    "core-js": "^3.1.4",
+    "postcss-preset-env": "^6.7.0"
   }
 }
