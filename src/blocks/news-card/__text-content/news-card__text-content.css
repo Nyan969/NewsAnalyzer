@@ -5,14 +5,14 @@
     flex-direction: column;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 976px) {
     .news-card__text-content {
         padding: 16px;
         height: 238px;
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 540px) {
     .news-card__text-content {
         height: 218px;
     }

@@ -10,7 +10,7 @@
     }
 }
 
-@media screen and (max-width: 429px) {
+@media screen and (max-width: 540px) {
     .header__menu-item_current-item-with-background {
         padding-bottom: 17px;
     }

@@ -14,14 +14,14 @@
     background: #F5F6F7;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 976px) {
     .card-section__button {
         margin-top: 32px;
         width: 240px;
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 540px) {
     .card-section__button {
         margin-top: 13px;
     }
