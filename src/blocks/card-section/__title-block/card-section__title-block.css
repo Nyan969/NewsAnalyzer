@@ -6,13 +6,13 @@
     padding: 0 0 64px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 976px) {
     .card-section__title-block {
         padding: 0 0 32px;
     }
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 540px) {
     .card-section__title-block {
         flex-direction: column;
         align-items: flex-start;

@@ -1,5 +1,6 @@
 @import url(__description/text-block__description.css);
 @import url(__title/text-block__title.css);
+@import url(__link/text-block__link.css);
 
 .text-block {
     align-self: flex-start;

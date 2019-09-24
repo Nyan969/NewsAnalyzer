@@ -1,0 +1,13 @@
+.text-block__link {
+    color: #000;
+    font-weight: 600;
+    transition: opacity 0.25s ease 0s;
+}
+
+.text-block__link:visited {
+    color: #000;
+}
+
+.text-block__link:hover {
+    opacity: 0.5;
+}

@@ -16,7 +16,7 @@ export default class CommitCardList {
     constructor() {
         this.createCard = this.createCard.bind(this);
     }
-
+//отрисовка карточек с коммитом
     createCard(data) {
         let numb = 0;
         data.forEach(item => {
@@ -37,10 +37,10 @@ export default class CommitCardList {
 
             numb++;
         });
-        this.createGlide();
+        CommitCardList.createGlide();
     }
-
-    createGlide() {
+//отрисовка слайдера
+    static createGlide() {
         const glide = new Glide('.glide', {
             focusAt: "center",
             startAt: 3,
@@ -74,14 +74,14 @@ export default class CommitCardList {
         });
         glide.mount();
     }
-
-    showPreloader() {
+//отрисовка прилодера
+    static showPreloader() {
         const preloaderTemplate = document.querySelector('#preloader-template');
         const preloader = document.importNode(preloaderTemplate.content, true);
         document.querySelector('.slider-box').appendChild(preloader);
     }
-
-    hidePreloader() {
+//удаление прилодера
+    static hidePreloader() {
         document.querySelector('.circle-preloader').remove();
         document.querySelector('.results-section__description').remove();
     }
