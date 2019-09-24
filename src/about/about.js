@@ -6,8 +6,8 @@ import CommitCardList from '../commit-card-list';
 import LazyLoad from '../lazy-load-Image';
 
 const commitCardList = new CommitCardList();
-commitCardList.showPreloader();
-new Request().commit(commitCardList.createCard, commitCardList.hidePreloader);
+CommitCardList.showPreloader();
+new Request().commit(commitCardList.createCard, CommitCardList.hidePreloader);
 const lazyLoad = new LazyLoad();
 document.addEventListener("DOMContentLoaded", lazyLoad.lazyLoadBG());
 

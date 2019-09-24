@@ -20,7 +20,6 @@ export default class NewsCardList {
 
     constructor() {
         this.bind();
-        this.connect();
     }
 
     bind() {
@@ -31,11 +30,11 @@ export default class NewsCardList {
         this.showPreloader = this.showPreloader.bind(this);
         this.renderError = this.renderError.bind(this);
     }
-
+//добавление слушателя
     connect() {
         this.#button.addEventListener('click', this.showMore);
     }
-
+//обработка
     processing(data) {
         this.data = data;
         if (this.data.articles.length === 0) {
@@ -49,16 +48,16 @@ export default class NewsCardList {
             this.#button.removeEventListener('click', this.showMore);
         }
     }
-
+//"показать еще"
     showMore() {
         this.processing(this.data);
     }
-
+//сохранение результата запроса в ls
     addToStorage(data) {
         localStorage.setItem('data', JSON.stringify(data));
         this.processing(JSON.parse(localStorage.getItem('data')));
     }
-
+//отрисовка новостной карточки
     createCard(data) {
         this.#cardSectionTitleBlock.setAttribute('style', `display: flex`);
         this.#cardSection.setAttribute('style', `display: flex`);
@@ -77,7 +76,7 @@ export default class NewsCardList {
             document.querySelector('.card-section__news-grid').appendChild(newsCard);
         });
     }
-
+//очистка секции с результатами, очистка ls, скрытие секции с результатами и кнопки
     remove() {
         localStorage.clear();
         this.#button.removeEventListener('click', this.showMore);
@@ -95,19 +94,19 @@ export default class NewsCardList {
 
         document.querySelector('.card-section__button').classList.add('button_disabled');
     }
-
+//показать прилоудер
     showPreloader() {
         this.#cardSection.setAttribute('style', `display: flex`);
         const preloaderTemplate = document.querySelector('#preloader-template');
         const preloader = document.importNode(preloaderTemplate.content, true);
         document.querySelector('.results-section').appendChild(preloader);
     }
-
-    hidePreloader() {
+//скрыть прилоудер
+    static hidePreloader() {
         document.querySelector('.circle-preloader').remove();
         document.querySelector('.results-section__description').remove();
     }
-
+//отрисовка ошибки
     renderError(err) {
         this.#errorTitle.textContent = 'Упс...';
         this.#errorDescription.textContent = ` ${err}`;
@@ -117,7 +116,7 @@ export default class NewsCardList {
 
         localStorage.clear();
     }
-
+//отрисовка "ничего не найдено"
     renderNotFound() {
         this.#errorTitle.textContent = 'Ничего не найдено';
         this.#errorDescription.textContent = `К сожалению по вашему запросу ничего не найдено.`;
