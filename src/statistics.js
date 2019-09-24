@@ -9,7 +9,7 @@ export default class Statistics {
         this.countTitleResults();
         this.getArticlesPerDay();
     }
-
+//подсчет количества новостей, у которых ключевое слово используется в заголовке
     countTitleResults() {
         let count = 0;
         this.data.articles.forEach(item => {
@@ -19,7 +19,7 @@ export default class Statistics {
         });
         this.displayGeneralStatistics(count);
     }
-
+//подсчет вышедших статей в день
     getArticlesPerDay() {
         const articlesPerDay = {};
         this.data.articles.forEach(item => {
@@ -30,15 +30,15 @@ export default class Statistics {
                 articlesPerDay[date] = 1;
             }
         });
-        this.plottingDailyStatistics(articlesPerDay)
+        this.plottingDailyStatistics(articlesPerDay);
     }
-
+//отображение общей статистики
     displayGeneralStatistics(count) {
         document.querySelector('.keywords').textContent = this.keywords;
         document.querySelector('.total-results').textContent = this.data.totalResults;
         document.querySelector('.title-results').textContent = count;
     }
-
+//отрисовка графика
     plottingDailyStatistics(articlesPerDay) {
         for (let i = 0; i <= 6; i++) {
             const dayInMillisecond = i * 24 * 60 * 60 * 1000;
